@@ -1,0 +1,64 @@
+/* tailwind.css */
+
+.container {
+  @apply max-w-md mx-auto p-4 pt-6 md:p-6 lg:p-12;
+}
+
+.search-filter {
+  @apply flex justify-between mb-4;
+}
+
+.search-filter input[type="text"] {
+  @apply w-full px-4 py-2 border border-gray-300 rounded;
+}
+
+.search-filter select {
+  @apply px-4 py-2 border border-gray-300 rounded;
+}
+
+.table {
+  @apply table-auto mx-auto mb-4;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  @apply px-4 py-2;
+  text-align: left;
+}
+
+.table tr:nth-child(even) {
+  @apply bg-gray-100;
+}
+
+.table th {
+  @apply bg-gray-200;
+  color: #333;
+}
+
+.pagination {
+  @apply flex justify-center mb-4;
+}
+
+.pagination button {
+  @apply bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded;
+  margin: 0 4px;
+}
+
+.pagination button[disabled] {
+  @apply bg-gray-300 cursor-not-allowed;
+}
+
+.pagination span {
+  @apply mx-2;
+}
+
+.items-per-page {
+  @apply ml-4;
+}
+
+.items-per-page select {
+  @apply px-4 py-2 border border-gray-300 rounded;
+  font-size: 14px;
+}

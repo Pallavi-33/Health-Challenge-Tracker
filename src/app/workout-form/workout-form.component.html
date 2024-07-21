@@ -1,0 +1,23 @@
+<div class="container ">
+  <h2>Add Workout</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userName">User Name:</label>
+      <input type="text" id="userName" name="userName" [(ngModel)]="userName" required placeholder="Enter your name" />
+    </div>
+
+    <div class="form-group">
+      <label for="workoutTypes">Workout Type:</label>
+      <select>
+        <option *ngFor = "let type of workoutTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="workoutMinutes">Workout Minutes:</label>
+      <input type="number" id="workoutMinutes" name="workoutMinutes" [(ngModel)]="workoutMinutes" required min="1"
+        placeholder="Enter workout minutes" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Workout</button>
+  </form>
+</div>

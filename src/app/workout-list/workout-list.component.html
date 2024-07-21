@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="search-filter">
+    <input type="text" placeholder="Search by name" [(ngModel)]="searchName">
+    <select [(ngModel)]="filterWorkoutType">
+      <option value="All">All</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+    </select>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Workouts</th>
+        <th>Number of Workouts</th>
+        <th>Total Workout Minutes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of getWorkouts()">
+        <td>{{ workout.name }}</td>
+        <td>{{ workout.workouts }}</td>
+        <td>{{ workout.number }}</td>
+        <td>{{ workout.minutes }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">
+      << Previous</button>
+        <span>{{ currentPage }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">Next >> </button>
+  </div>
+
+  <div class="items-per-page">
+    Items per page:
+    <select (change)="changeItemsPerPage($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+</div>
